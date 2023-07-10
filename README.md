@@ -1,7 +1,7 @@
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4. <br>
-My demo project here: [Demo](https://devs--silver-meringue-d29f81.netlify.app/dashboard/weather)
+My demo project here: [Demo](https://devs--silver-meringue-d29f81.netlify.app/)
 
 ## Development server
 
