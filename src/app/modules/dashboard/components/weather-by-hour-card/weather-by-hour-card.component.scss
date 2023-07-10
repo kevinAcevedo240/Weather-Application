@@ -1,0 +1,6 @@
+/* Estilos para el texto en estado hover */
+.card:hover h1,
+.card:hover p {
+  color: #ffffff;
+  transition: ease-in-out .2s;
+}
