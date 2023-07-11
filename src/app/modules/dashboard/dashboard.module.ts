@@ -14,6 +14,8 @@ import { NavComponent } from './nav/nav.component';
 import { OtherInformationCardComponent } from './components/other-information-card/other-information-card.component';
 import { WorldCountriesMapCardComponent } from './components/world-countries-map-card/world-countries-map-card.component';
 import { FormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -34,6 +36,8 @@ import { FormsModule } from '@angular/forms';
     DashboardRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgOptimizedImage,
+    FontAwesomeModule,
   ],
 })
 export class DashboardModule {}

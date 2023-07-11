@@ -5,7 +5,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +13,6 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
 
   ],
-  imports: [CommonModule, LayoutRoutingModule, HttpClientModule, FontAwesomeModule,FormsModule],
+  imports: [CommonModule, LayoutRoutingModule, HttpClientModule, FontAwesomeModule],
 })
 export class LayoutModule {}

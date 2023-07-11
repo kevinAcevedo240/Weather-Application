@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, inject } from '@angular/core';
 import { IThemeRepository } from 'src/app/Domain/repositories/ITheme.repository';
 import { ThemeService } from 'src/app/Domain/services/theme.service';
 
@@ -10,6 +10,9 @@ import { ThemeService } from 'src/app/Domain/services/theme.service';
 
 @Injectable({ providedIn: 'root' })
 export class NavComponent {
+
+  public themeService = inject(ThemeService);
+
   searchText: string = '';
   // constructor(private ithemeRepository: IThemeRepository) {}
 
@@ -19,7 +22,8 @@ export class NavComponent {
   //   this.ithemeRepository.setTheme(newTheme);
   // }
 
-  constructor(public themeService: ThemeService) {}
+
+  // constructor(public themeService: ThemeService) {}
 
   toggleTheme() {
     this.themeService.theme = !this.themeService.isDark ? 'dark' : 'light';

@@ -1,9 +1,9 @@
-<div class="mx-auto px-4 py-4 mt-6  sm:px-8 lg:container">
+<div class="mx-auto px-4 py-4 mt-4  sm:px-8 lg:container">
 
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-7">
 
     <!-- Main Weather current information -->
-    <div main-card class="xl:row-span-6 xl:col-span-2 md:col-span-2"></div>
+    <div main-card class="xl:row-span-6 xl:col-span-2 md:col-span-2 "></div>
 
     <!-- narbar -->
     <div nav class="xl:row-span-1 xl:col-span-5"></div>
@@ -17,7 +17,7 @@
     <!-- Different times of the current day -->
     <div class="xl:row-span-2 xl:col-span-5">
       <div class="overflow-x-auto  overflow-y-hidden flex space-x-6 pt-5 pb-3 pl-1 ">
-        <weather-by-hour-card class="xl:row-span-2 xl:col-span-1 h-60 z-40 " [weatherByTime]="time"
+        <weather-by-hour-card class="xl:row-span-2 xl:col-span-1 h-60  " [weatherByTime]="time"
           *ngFor="let time of weatherTime">
         </weather-by-hour-card>
       </div>
