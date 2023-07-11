@@ -1,6 +1,7 @@
 import { Component, Injectable, inject } from '@angular/core';
 import { IThemeRepository } from 'src/app/Domain/repositories/ITheme.repository';
 import { ThemeService } from 'src/app/Domain/services/theme.service';
+import { faEarth, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: '[nav]',
@@ -10,7 +11,8 @@ import { ThemeService } from 'src/app/Domain/services/theme.service';
 
 @Injectable({ providedIn: 'root' })
 export class NavComponent {
-
+  faEarth = faEarth;
+  faMagnifyingGlass = faMagnifyingGlass;
   public themeService = inject(ThemeService);
 
   searchText: string = '';

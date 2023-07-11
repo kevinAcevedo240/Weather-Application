@@ -111,10 +111,8 @@ input[type="checkbox"] {
  }
 
  .btn:active{
-  box-shadow:  3px 3px 6px 0 rgba(255,255,255,.5),
-              -3px -3px 6px 0 rgba(116, 125, 136, .2),
-    inset -3px -3px 6px 0 rgba(255,255,255,.5),
-    inset 3px 3px 6px 0 rgba(116, 125, 136, .3);
+  box-shadow: inset 4px 4px 8px #b3b3b3,
+  inset -4px -4px 8px #ffffff;
 }
 
  input {
@@ -147,6 +145,11 @@ input[type="checkbox"] {
  .hoverEffect:hover{
   box-shadow: inset 4px 4px 8px #b3b3b3,
   inset -4px -4px 8px #ffffff;
+  & fa-icon,
+  & span {
+    color: #3b82f6;
+    filter: drop-shadow(0 2px 5px rgba(20, 30, 71, 0.3));
+  }
  }
 
 
