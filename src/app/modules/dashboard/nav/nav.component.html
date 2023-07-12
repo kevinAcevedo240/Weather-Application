@@ -4,9 +4,10 @@
   <!-- Place Searcher -->
   <div class="flex xl:row-span-1 xl:col-span-2 h-20 items-center p-4  dark:bg-night-700 effect rounded-2xl  "
     (click)="searchPlace()">
-    <button class="flex effect p-4 rounded-lg btn z-10">
-      <fa-icon class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700"
-        [icon]="faMagnifyingGlass"></fa-icon>
+    <button class="flex effect p-3 rounded-lg btn z-10">
+      <!-- <fa-icon class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700"
+        [icon]="faMagnifyingGlass"></fa-icon> -->
+        <img class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700 w-12" src="../../../../assets/icons/IconSearch.gif">
     </button>
     <input placeholder="Search for cities" class=" mt-1 w-full" [(ngModel)]="searchText" />
   </div>
