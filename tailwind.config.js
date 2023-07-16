@@ -11,6 +11,7 @@ module.exports = {
       poppins: ['Poppins', 'system-ui', 'sans-serif'],
       nunito: ['Nunito Sans', 'sans-serif'],
     },
+
     backgroundColor: theme => ({
       ...theme('colors'),
       'primary': '#e6e6e6',

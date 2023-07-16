@@ -1,0 +1,40 @@
+
+.background {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(29deg, rgba(0,0,0,0.8407738095238095) 7%, rgba(255,255,255,0) 51%, rgba(20,143,193,0) 100%);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.sunset {
+  background-image: url(../../../../../assets/BackgroundLandscape/3.png);
+}
+
+.morning {
+  background-image: url(../../../../../assets/BackgroundLandscape/2.png);
+}
+
+.sunrise {
+  background-image: url(../../../../../assets/BackgroundLandscape/4.png);
+}
+
+.mid-nightfall {
+  background-image: url(../../../../../assets/BackgroundLandscape/5.png);
+}
+
+
+.nightfall {
+  background-image: url(../../../../../assets/BackgroundLandscape/6.png);
+}
+
