@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faWind, faUmbrella, faTint } from '@fortawesome/free-solid-svg-icons';
+import { faWind, faUmbrella, faTint, faEye, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -11,6 +11,9 @@ export class OtherInformationCardComponent {
   faWind = faWind;
   faUmbrella = faUmbrella;
   faTint = faTint;
+  faEye = faEye;
+  faSun = faSun;
+  faMoon = faMoon;
 
   isHovered1 = false;
   isHovered2 = false;

@@ -1,24 +1,81 @@
-<div class="flex h-full effect flex-col bg-primary rounded-xl p-6 dark:bg-night-700">
-<h1 class=" mb-4 text-xl font-semibold text-gray-500 xl:text-2xl">Today's Highlights</h1>
-  <div class="flex items-center justify-start">
-    <div class="card-1 effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
-      <fa-icon class="text-5xl text-blue-500 transform duration-300 hover:text-blue-700" [icon]="faWind"></fa-icon>
+<div class="w-full h-full effect flex-col bg-primary rounded-xl p-6 dark:bg-night-700">
+  <h1 class="mb-4 text-xl font-semibold text-gray-500 xl:text-2xl xl:mb-6">Today's Highlights</h1>
+  <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 ">
+    <div class=" flex items-center justify-start">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon class="text-5xl text-blue-500 transform duration-300 hover:text-blue-700" [icon]="faWind"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Wind</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">38.6</span>
+      </div>
     </div>
-    <span class="ml-4 text-3xl font-semibold text-gray-500">38.6</span>
+
+    <div class="flex items-center justify-start mt-4 xl:mt-0">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon class="text-5xl text-blue-500 transform duration-300 hover:text-blue-700"
+          [icon]="faUmbrella"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Pressure</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">1025hPa</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-start mt-4">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon
+          class="text-5xl text-blue-500 text-gradient-to-b from-blue-500 to-blue-300 transform duration-300 hover:text-blue-700"
+          [icon]="faTint"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Humidity</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">81%</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-start mt-4">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon
+          class="text-5xl text-blue-500 text-gradient-to-b from-blue-500 to-blue-300 transform duration-300 hover:text-blue-700"
+          [icon]="faEye"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Visibility</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">0.3km</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-start mt-4">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon
+          class="text-5xl text-blue-500 text-gradient-to-b from-blue-500 to-blue-300 transform duration-300 hover:text-blue-700"
+          [icon]="faSun"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Sunrise</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">6:30 am</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-start mt-4">
+      <div
+        class="card effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
+        <fa-icon
+          class="text-5xl text-blue-500 text-gradient-to-b from-blue-500 to-blue-300 transform duration-300 hover:text-blue-700"
+          [icon]="faMoon"></fa-icon>
+      </div>
+      <div class="pt-1 my-auto flex flex-col items-start">
+        <h4 class="ml-4 text-lg font-semibold text-gray-400">Sunset</h4>
+        <span class="ml-4 text-3xl font-semibold text-gray-500">6:45 pm</span>
+      </div>
+    </div>
   </div>
 
-  <div class="flex items-center justify-start mt-4">
-    <div class="card-2 effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
-      <fa-icon class="text-5xl text-blue-500 transform duration-300 hover:text-blue-700" [icon]="faUmbrella"></fa-icon>
-    </div>
-    <span class="ml-4 text-3xl font-semibold text-gray-500">1025hPa</span>
-  </div>
-
-  <div class="flex items-center justify-start mt-4">
-    <div class="card-3 effect rounded-full bg-primary w-20 h-20 flex items-center justify-center transform duration-300  hover:bg-gradient-to-b from-blue-600 to-blue-400 hover:shadow-lg  hover:shadow-blue-500/50 dark:bg-night-700 ">
-      <fa-icon class="text-5xl text-blue-500 text-gradient-to-b from-blue-500 to-blue-300 transform duration-300 hover:text-blue-700" [icon]="faTint"></fa-icon>
-    </div>
-    <span class="ml-4 text-3xl font-semibold text-gray-500">81%</span>
-  </div>
 
 </div>
