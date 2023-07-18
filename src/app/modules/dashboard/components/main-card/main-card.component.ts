@@ -25,14 +25,13 @@ export class MainCardComponent {
   }
 
   getCardClass(): string {
-    console.log(this.currentHour);
     if (this.currentHour >= 8 && this.currentHour < 17) {
       return 'morning';
-    } else if (this.currentHour >= 17 && this.currentHour < 19) {
+    } else if (this.currentHour >= 17 && this.currentHour < 18) {
       return 'sunrise';
-    } else if (this.currentHour >= 19 && this.currentHour < 21) {
+    } else if (this.currentHour >= 18 && this.currentHour < 19) {
       return 'mid-nightfall';
-    } else if (this.currentHour >= 21 && this.currentHour < 24) {
+    } else if (this.currentHour >= 19 && this.currentHour < 24) {
       return 'nightfall';
     } else {
       return 'sunset';
@@ -40,4 +39,6 @@ export class MainCardComponent {
 
 
   }
+
+
 }

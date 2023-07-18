@@ -9,13 +9,22 @@
         [icon]="faMagnifyingGlass"></fa-icon> -->
         <img class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700 w-12" src="../../../../assets/icons/IconSearch.gif">
     </button>
+    <!-- <select class="mt-1 w-full" [(ngModel)]="selectedOption">
+      <option value="">Select a city</option>
+      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+    </select> -->
     <input placeholder="Search for cities" class=" mt-1 w-full" [(ngModel)]="searchText" />
+    <div class=" inset-0 bg-gray-400 bg-opacity-75 backdrop-filter backdrop-blur-sm flex justify-center items-center" *ngIf="showResults">
+      <!-- Aquí colocar la lista de resultados -->
+    </div>
   </div>
+
+
 
 
   <!-- Current Location-->
   <button class="flex xl:row-span-1 xl:col-span-2 h-20 items-center p-4  dark:bg-night-700 effect rounded-2xl  btn "
-    (click)="searchPlace()">
+    (click)="getCurrentLocation()">
     <div
       class="flex items-center hover:rounded-xl xl:hover:w-full h-full pr-14 pl-3 xl:pl-10 lg:pl-10 transition duration-100 ease-in-out hoverEffect">
       <fa-icon class="text-4xl text-gray-500 transform duration-300" [icon]="faEarth"></fa-icon>

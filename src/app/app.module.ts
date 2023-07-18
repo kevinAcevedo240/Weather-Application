@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DomainModule } from './Domain/domain.module';
 import { ThemeUsecase } from './Domain/usecases/theme-usecases/theme.usecase';
+import { IWeatherRepository } from './Domain/repositories/IWeather.repository';
+import { OpenWeatherMapAdapterService } from './Infraestructure/driven-adapter/open-weather-map-adapter.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,12 @@ import { ThemeUsecase } from './Domain/usecases/theme-usecases/theme.usecase';
     FontAwesomeModule,
   ],
   ],
-  providers: [DomainModule, ThemeUsecase],
+  providers: [
+    DomainModule,
+    ThemeUsecase,
+
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

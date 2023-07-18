@@ -14,6 +14,9 @@ import { WorldCountriesMapCardComponent } from './components/world-countries-map
 import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WeatherUseCase } from 'src/app/Domain/usecases/weather-usecases/weather.usecase';
+import { OpenWeatherMapAdapterService } from 'src/app/Infraestructure/driven-adapter/open-weather-map-adapter.service';
+import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
 
 
 
@@ -35,5 +38,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgOptimizedImage,
     FontAwesomeModule,
   ],
+  providers: [
+    { provide: WeatherUseCase, useClass: WeatherUseCase },
+    { provide: IWeatherRepository, useClass: OpenWeatherMapAdapterService }
+  ],
+
 })
 export class DashboardModule {}
