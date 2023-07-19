@@ -4,6 +4,7 @@ import { ThemeService } from 'src/app/Domain/services/theme.service';
 import { faEarth, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
 import { WeatherUseCase } from 'src/app/Domain/usecases/weather-usecases/weather.usecase';
+import { ThemeUsecase } from 'src/app/Domain/usecases/theme-usecases/theme.usecase';
 
 @Component({
   selector: '[nav]',
@@ -18,22 +19,18 @@ export class NavComponent {
   showResults: boolean = false;
   selectedOption: string = '';
 
-  public themeService = inject(ThemeService);
+   public themeService = inject(ThemeService);
 
   searchText: string = '';
-  constructor(public _WeatherUserCase : WeatherUseCase){}
-  // constructor(private ithemeRepository: IThemeRepository) {}
-
-  // public toggleTheme(): void {
-  //   const currentTheme = this.ithemeRepository.getTheme();
-  //   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  //   this.ithemeRepository.setTheme(newTheme);
-  // }
-
-
-  // constructor(public themeService: ThemeService) {}
+  constructor(public _WeatherUseCase : WeatherUseCase,
+    public _ThemeUseCase: ThemeUsecase){}
 
   toggleTheme() {
+    // const currentTheme = this._ThemeUseCase.getTheme();
+    // console.log('current Theme: ',currentTheme);
+    // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // console.log('New Theme: ',newTheme);
+    // this._ThemeUseCase.setTheme(newTheme);
     this.themeService.theme = !this.themeService.isDark ? 'dark' : 'light';
   }
 
@@ -49,7 +46,7 @@ export class NavComponent {
   }
 
     getCurrentLocation(): void {
-      this._WeatherUserCase.getCurrentLocation().pipe(
+      this._WeatherUseCase.getCurrentLocation().pipe(
       ).subscribe(
         (location) => {
           console.log('Ubicación actual:', location);
@@ -62,25 +59,6 @@ export class NavComponent {
       );
     }
 
-  //  getCurrentLocation(): void {
-  //   if (!navigator.geolocation) {
-  //     console.log('Geolocation is not supported by your browser');
-  //     return;
-  //   }
-
-  //   navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       const lat = position.coords.latitude.toString();
-  //       const lon = position.coords.longitude.toString();
-  //       console.log('Ubicación actual:', { lat, lon });
-  //       // Realiza la acción correspondiente con las coordenadas de ubicación (lat, lon)
-  //     },
-  //     (error) => {
-  //       console.log('Error al obtener la ubicación:', error);
-  //       // Maneja el error de obtener la ubicación actual
-  //     }
-  //   );
-  // }
 
 
 }

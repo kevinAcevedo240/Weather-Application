@@ -6,10 +6,9 @@ import { IThemeRepository } from '../../repositories/ITheme.repository';
   providedIn: 'root',
 })
 export class ThemeUsecase implements IThemeRepository{
-  public default = 'light';
-  public themeChanged: BehaviorSubject<string> = new BehaviorSubject(this.getTheme());
+  private default = 'light';
+  private themeChanged: BehaviorSubject<string> = new BehaviorSubject(this.getTheme());
 
-  constructor() {}
 
   public getTheme(): string {
     return localStorage.getItem('theme') ?? this.default;

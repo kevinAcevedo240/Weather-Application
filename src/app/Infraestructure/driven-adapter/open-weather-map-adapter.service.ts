@@ -9,7 +9,7 @@ import { WeatherData } from 'src/app/Domain/entities/WeatherData';
 })
 export class OpenWeatherMapAdapterService {
 
-  private APIKEY = '20fdfb76008f0d97399a7057b61972e9';
+  private APIKEY = '695b5baa81d360663ea37b4bac8cde2e';
   private BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
   constructor(private http: HttpClient) {}

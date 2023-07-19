@@ -1,6 +1,17 @@
 export interface WeatherData {
-  temperature: number;
-  humidity: number;
-  windSpeed: number;
-  // Otros datos relevantes del clima actual
+  name: string;
+  sys: {
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  visibility: number;
+  main: {
+    pressure: number;
+    humidity: number;
+    temp: number;
+  };
+  weather: {
+    description: string;
+  }[];
 }

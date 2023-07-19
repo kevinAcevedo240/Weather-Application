@@ -1,9 +1,12 @@
 export interface ForecastData {
-  hourlyForecasts: HourlyForecast[];
-}
-
-export interface HourlyForecast {
-  temperature: number;
-  time: Date;
-  // Otros datos relevantes del pronóstico por hora
+  list: {
+    dt_txt: string;
+    main: {
+      temp: number;
+    };
+    weather: {
+      description: string;
+      icon: string;
+    }[];
+  }[];
 }

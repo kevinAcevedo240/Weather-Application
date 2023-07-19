@@ -1,7 +1,7 @@
- export interface IThemeRepository {
-   getTheme(): string;
-   setTheme(value: string): void;
-   isDarkTheme(): boolean;
+ export abstract class IThemeRepository {
+   abstract getTheme(): string;
+   abstract setTheme(value: string): void;
+   abstract isDarkTheme(): boolean;
  }
 
 // import { Injectable } from '@angular/core';

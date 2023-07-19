@@ -17,6 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WeatherUseCase } from 'src/app/Domain/usecases/weather-usecases/weather.usecase';
 import { OpenWeatherMapAdapterService } from 'src/app/Infraestructure/driven-adapter/open-weather-map-adapter.service';
 import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
+import { TemperatureConversionPipe } from '../shared/pipes/temperature-conversion.pipe';
+import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
 
 
 
@@ -29,6 +31,8 @@ import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.reposit
     NavComponent,
     OtherInformationCardComponent,
     WorldCountriesMapCardComponent,
+    TemperatureConversionPipe,
+    CustomDatePipe,
   ],
   imports: [
     CommonModule,
