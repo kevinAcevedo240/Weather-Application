@@ -11,10 +11,10 @@ export class CustomDatePipe implements PipeTransform {
     let hours = parseInt(timeParts[0], 10);
     const ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
-    hours = hours ? hours : 12;
+    hours = hours || 12; // Usar 12 en lugar de 0 si el valor es 0
     const minutes = timeParts[1];
 
-    return `${hours}:${minutes} ${ampm}`;
+    return `${hours} ${ampm}`;
   }
 
 }

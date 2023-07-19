@@ -27,7 +27,8 @@ export class WeatherComponent implements OnInit {
             // icon: `../../../../../assets/icons/${forecast.weather[0].icon}.png`,
             icon: this.getWeatherIconUrl(forecast.weather[0].icon),
             Temperature: forecast.main.temp,
-            description: forecast.dt_txt.split(' ')[1]
+            description: forecast.weather[0].description,
+            date: forecast.dt_txt,
           };
         });
       });
@@ -38,33 +39,6 @@ export class WeatherComponent implements OnInit {
     return `../../../../../assets/WeatherIcons/${iconCode}.png`; // Reemplaza "example.com" por la URL correcta para los iconos
   }
 
-  // weatherTime: WeatherByTime[] = [
-  //   {
-  //     icon:'../../../../../assets/icons/sun/26.png',
-  //     Temperature: 298.15,
-  //     description: '12 pm'
-  //   },
-  //   {
-  //     icon:'../../../../../assets/icons/sun/13.png',
-  //     Temperature: 298.15,
-  //     description: '3 pm'
-  //   },
-  //   {
-  //     icon:'../../../../../assets/icons/sun/13.png',
-  //     Temperature: 296.15,
-  //     description: '6 pm'
-  //   },
-  //   {
-  //     icon:'../../../../../assets/icons/cloud/7.png',
-  //     Temperature: 293.15,
-  //     description: '9 pm'
-  //   },
-  //   {
-  //     icon:'../../../../../assets/icons/moon/14.png',
-  //     Temperature: 290.15,
-  //     description: '12 am'
-  //   },
-  // ]
 
 
 }

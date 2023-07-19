@@ -11,5 +11,6 @@ export class WeatherByHourCardComponent {
     icon:'',
     Temperature: 0,
     description: '',
+    date: '',
   }
 }
