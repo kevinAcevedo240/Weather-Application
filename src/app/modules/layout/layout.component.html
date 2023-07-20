@@ -1,16 +1,23 @@
+<!-- Loader -->
+<div class=" flex items-center justify-center" *ngIf="!isContentLoaded">
+
+  <div class="flex-col items-center justify-center">
+    <img src="../../../assets/images/Loader.gif" alt="Loading..." class="w-96 h-96">
+    <p class="text-4xl font-semibold text-gray-700">Loading...</p>
+  </div>
+</div>
+
 <div class="flex h-screen w-full  overflow-hidden">
 
 
-  <div class="flex grow flex-col content-start bg-primary dark:bg-night-800">
-
+  <div class="flex grow flex-col content-start bg-primary dark:bg-night-800" *ngIf="isContentLoaded">
     <!-- main content -->
     <div
       class="scrollbar-thumb-rounded scrollbar-track-rounded grow overflow-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-100 dark:scrollbar-thumb-night-700 dark:scrollbar-track-night-800">
       <router-outlet></router-outlet>
     </div>
 
-      <!-- footer -->
-      <app-footer></app-footer>
-
+    <!-- footer -->
+    <app-footer></app-footer>
   </div>
 </div>

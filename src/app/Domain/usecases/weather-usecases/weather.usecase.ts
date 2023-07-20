@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IWeatherRepository } from '../../repositories/IWeather.repository';
 import { WeatherData } from '../../entities/WeatherData';
 import { ForecastData } from '../../entities/ForecastData';
@@ -9,6 +9,12 @@ import { ForecastData } from '../../entities/ForecastData';
 })
 export class WeatherUseCase {
   constructor(private _weatherRepository: IWeatherRepository) {}
+
+  public CurrentWeather = new BehaviorSubject<WeatherData | null>(null);
+  CurrentWeather$ = this.CurrentWeather.asObservable();
+
+  public CurrentForecast =  new BehaviorSubject<ForecastData| null>(null);
+  CurrentForecast$ = this.CurrentForecast.asObservable();
 
   getCurrentWeatherByLocation(location: string): Observable<WeatherData> {
     return this._weatherRepository.getCurrentWeatherByLocation(location);

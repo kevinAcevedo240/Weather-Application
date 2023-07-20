@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ForecastData } from 'src/app/Domain/entities/ForecastData';
 import { WeatherData } from 'src/app/Domain/entities/WeatherData';
 
@@ -11,6 +11,7 @@ export class OpenWeatherMapAdapterService {
 
   private APIKEY = '695b5baa81d360663ea37b4bac8cde2e';
   private BASE_URL = 'https://api.openweathermap.org/data/2.5';
+
 
   constructor(private http: HttpClient) {}
 

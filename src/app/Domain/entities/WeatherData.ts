@@ -1,4 +1,8 @@
 export interface WeatherData {
+  coord: {
+    lon: number,
+    lat: number
+  };
   name: string;
   sys: {
     country: string;
@@ -11,7 +15,12 @@ export interface WeatherData {
     humidity: number;
     temp: number;
   };
+  wind: {
+    speed: number,
+    deg: number
+    },
   weather: {
     description: string;
+    icon: string;
   }[];
 }

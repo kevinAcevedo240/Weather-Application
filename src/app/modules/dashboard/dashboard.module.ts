@@ -19,6 +19,9 @@ import { OpenWeatherMapAdapterService } from 'src/app/Infraestructure/driven-ada
 import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
 import { TemperatureConversionPipe } from '../shared/pipes/temperature-conversion.pipe';
 import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
+import { CamelCasePipe } from '../shared/pipes/camel-case.pipe';
+import { TimestampToTimePipe } from '../shared/pipes/timestamp-to-time.pipe';
+import { MetersToKilometersPipe } from '../shared/pipes/meters-to-kilometers.pipe';
 
 
 
@@ -33,6 +36,9 @@ import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
     WorldCountriesMapCardComponent,
     TemperatureConversionPipe,
     CustomDatePipe,
+    CamelCasePipe,
+    TimestampToTimePipe,
+    MetersToKilometersPipe,
   ],
   imports: [
     CommonModule,

@@ -7,9 +7,10 @@
     <h1 class="text-4xl font-semibold text-gray-600">{{ time.Temperature | temperatureConversion }}</h1>
     <p class="text-xl text-gray-400 mt-2">{{ time.date | customDate }}</p>
   </div>
-  <!-- Tooltip -->
+
   <div class="px-3 transit opacity-0 bg-gray-600 text-white text-center text-sm rounded-lg py-2 absolute bottom-4 left-1/2 transform  duration-200 -translate-x-1/2 group-hover:opacity-100 pointer-events-none whitespace-nowrap">
-    {{ time.description }}
+    {{ time.description | camelCase}}
   </div>
 </div>
 <!-- end Card -->
+

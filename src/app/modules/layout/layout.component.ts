@@ -9,5 +9,12 @@ export class LayoutComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  isContentLoaded: boolean = true;
+
+  ngOnInit(): void {
+
+    setTimeout(() => {
+      this.isContentLoaded = true;
+    }, 2000);
+  }
 }

@@ -5,6 +5,10 @@ import { faEarth, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
 import { WeatherUseCase } from 'src/app/Domain/usecases/weather-usecases/weather.usecase';
 import { ThemeUsecase } from 'src/app/Domain/usecases/theme-usecases/theme.usecase';
+import { WeatherByTime } from '../models/weatherByTime';
+import { WeatherData } from 'src/app/Domain/entities/WeatherData';
+import { getWeatherIconUrl } from '../../shared/Util/utils';
+import { ForecastData } from 'src/app/Domain/entities/ForecastData';
 
 @Component({
   selector: '[nav]',
@@ -18,6 +22,8 @@ export class NavComponent {
   faMagnifyingGlass = faMagnifyingGlass;
   showResults: boolean = false;
   selectedOption: string = '';
+  public weatherTime: WeatherByTime[] = [];
+  public currentWeatherData: WeatherData | null = null;
 
    public themeService = inject(ThemeService);
 
@@ -39,10 +45,42 @@ export class NavComponent {
       // Mostrar la alerta si el input está vacío
       console.log('Ingrese un lugar para realizar la búsqueda');
     } else {
-      console.log('Buscar:', this.searchText);
-    }
+      this._WeatherUseCase.getCurrentWeatherByLocation(this.searchText.trim()).subscribe(
+        (weatherData) => {
+          this._WeatherUseCase.getCurrentWeatherByCoordinates(
+            weatherData.coord.lat.toString(),
+            weatherData.coord.lon.toString()
+          ).subscribe(
+            (currentWeatherData) => {
+              this._WeatherUseCase.CurrentWeather.next(currentWeatherData);
+              console.log(currentWeatherData);
+            },
+            (error) => {
+              console.error('Error al obtener el clima actual:', error);
+            }
+          );
 
-    this.showResults = true;
+          this._WeatherUseCase.getWeatherForecastByCoordinates(
+            weatherData.coord.lat.toString(),
+            weatherData.coord.lon.toString()
+          ).subscribe(
+            (forecastData) => {
+              const forecastDataFormatted: ForecastData = {
+                list: forecastData.list.slice(0, 5)
+              };
+              this._WeatherUseCase.CurrentForecast.next(forecastDataFormatted);
+              console.log(forecastDataFormatted);
+            },
+            (error) => {
+              console.error('Error al obtener el pronóstico:', error);
+            }
+          );
+        },
+        (error) => {
+          console.error('Error al obtener el clima por ubicación:', error);
+        }
+      );
+    }
   }
 
     getCurrentLocation(): void {
@@ -50,11 +88,29 @@ export class NavComponent {
       ).subscribe(
         (location) => {
           console.log('Ubicación actual:', location);
-          // Realiza la acción correspondiente con las coordenadas de ubicación (location.lat, location.lon)
+          this._WeatherUseCase.getWeatherForecastByCoordinates(location.lat.toString(), location.lon.toString())
+      .subscribe((data) => {
+        const forecastData: ForecastData = {
+          list: data.list.slice(0, 5)
+        };
+        this._WeatherUseCase.CurrentForecast.next(forecastData);
+        console.log(forecastData);
+
+      });
+
+      this._WeatherUseCase
+      .getCurrentWeatherByCoordinates(
+        location.lat.toString(),
+        location.lon.toString()
+      )
+      .subscribe((data) => {
+        this._WeatherUseCase.CurrentWeather.next(data);
+        console.log(data);
+      });
+
         },
         (error) => {
           console.log('Error al obtener la ubicación:', error);
-          // Maneja el error de obtener la ubicación actual
         }
       );
     }
