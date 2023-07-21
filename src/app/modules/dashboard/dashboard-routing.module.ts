@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { WeatherComponent } from './pages/weather/weather.component';
-import { NotFoundComponent } from '../shared/not-found/not-found.component';
+import { NotFoundComponent } from '../shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {

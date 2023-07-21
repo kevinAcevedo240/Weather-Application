@@ -17,11 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WeatherUseCase } from 'src/app/Domain/usecases/weather-usecases/weather.usecase';
 import { OpenWeatherMapAdapterService } from 'src/app/Infraestructure/driven-adapter/open-weather-map-adapter.service';
 import { IWeatherRepository } from 'src/app/Domain/repositories/IWeather.repository';
-import { TemperatureConversionPipe } from '../shared/pipes/temperature-conversion.pipe';
-import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
-import { CamelCasePipe } from '../shared/pipes/camel-case.pipe';
-import { TimestampToTimePipe } from '../shared/pipes/timestamp-to-time.pipe';
-import { MetersToKilometersPipe } from '../shared/pipes/meters-to-kilometers.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -34,11 +30,7 @@ import { MetersToKilometersPipe } from '../shared/pipes/meters-to-kilometers.pip
     NavComponent,
     OtherInformationCardComponent,
     WorldCountriesMapCardComponent,
-    TemperatureConversionPipe,
-    CustomDatePipe,
-    CamelCasePipe,
-    TimestampToTimePipe,
-    MetersToKilometersPipe,
+
   ],
   imports: [
     CommonModule,
@@ -47,6 +39,7 @@ import { MetersToKilometersPipe } from '../shared/pipes/meters-to-kilometers.pip
     FormsModule,
     NgOptimizedImage,
     FontAwesomeModule,
+    SharedModule,
   ],
   providers: [
     { provide: WeatherUseCase, useClass: WeatherUseCase },

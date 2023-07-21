@@ -18,6 +18,7 @@ export class WeatherComponent implements OnInit {
   private LONGITUDE_DEFAULT: Number = -75.6961;
   public weatherTime: WeatherByTime[] = [];
   public currentWeatherData: WeatherData | null = null;
+  public loading: boolean = true;
 
   constructor(public _WeatherUseCase : WeatherUseCase){}
 
@@ -30,7 +31,6 @@ export class WeatherComponent implements OnInit {
       } else {
         // Si ya tiene valor, utiliza esos datos
         this.weatherTime = forecastData.list.slice(0, 5).map((forecast) => {
-          console.log(forecast);
           return {
             icon: getWeatherIconUrl(forecast.weather[0].icon),
             Temperature: forecast.main.temp,
@@ -49,15 +49,15 @@ export class WeatherComponent implements OnInit {
       } else {
         // Si ya tiene valor, utiliza esos datos
         this.currentWeatherData = weatherData;
-        console.log(weatherData);
       }
     });
+
+    this.loading = false;
   }
 
   private getWeatherForecastByCoordinates(lat: string, lon: string): void {
     this._WeatherUseCase.getWeatherForecastByCoordinates(lat, lon).subscribe((data) => {
       this.weatherTime = data.list.slice(0, 5).map((forecast) => {
-        console.log(forecast);
         return {
           icon: getWeatherIconUrl(forecast.weather[0].icon),
           Temperature: forecast.main.temp,
@@ -71,9 +71,10 @@ export class WeatherComponent implements OnInit {
   private getCurrentWeatherByCoordinates(lat: string, lon: string): void {
     this._WeatherUseCase.getCurrentWeatherByCoordinates(lat, lon).subscribe((data) => {
       this.currentWeatherData = data;
-      console.log(data);
     });
   }
-
+  goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
 }

@@ -23,6 +23,7 @@ module.exports = {
       'secondary': '#8FA206',
       'terciary': '#61AEC9'
     },
+
     },
 
 

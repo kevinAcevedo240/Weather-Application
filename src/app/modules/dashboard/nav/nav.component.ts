@@ -53,7 +53,6 @@ export class NavComponent {
           ).subscribe(
             (currentWeatherData) => {
               this._WeatherUseCase.CurrentWeather.next(currentWeatherData);
-              console.log(currentWeatherData);
             },
             (error) => {
               console.error('Error al obtener el clima actual:', error);
@@ -69,7 +68,6 @@ export class NavComponent {
                 list: forecastData.list.slice(0, 5)
               };
               this._WeatherUseCase.CurrentForecast.next(forecastDataFormatted);
-              console.log(forecastDataFormatted);
             },
             (error) => {
               console.error('Error al obtener el pronóstico:', error);
@@ -87,14 +85,12 @@ export class NavComponent {
       this._WeatherUseCase.getCurrentLocation().pipe(
       ).subscribe(
         (location) => {
-          console.log('Ubicación actual:', location);
           this._WeatherUseCase.getWeatherForecastByCoordinates(location.lat.toString(), location.lon.toString())
       .subscribe((data) => {
         const forecastData: ForecastData = {
           list: data.list.slice(0, 5)
         };
         this._WeatherUseCase.CurrentForecast.next(forecastData);
-        console.log(forecastData);
 
       });
 
@@ -105,7 +101,6 @@ export class NavComponent {
       )
       .subscribe((data) => {
         this._WeatherUseCase.CurrentWeather.next(data);
-        console.log(data);
       });
 
         },
