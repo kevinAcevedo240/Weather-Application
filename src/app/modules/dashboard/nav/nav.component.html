@@ -2,37 +2,39 @@
 
 
   <!-- Place Searcher -->
-  <div class="flex xl:row-span-1 xl:col-span-2 h-20 items-center p-4  dark:bg-night-700 effect rounded-2xl  "
-    (click)="searchPlace()">
-    <button class="flex effect p-3 rounded-lg btn z-10">
+  <div class="flex xl:row-span-1 xl:col-span-2 h-20 items-center p-4  dark:bg-night-700 effect rounded-2xl  ">
+    <button class="flex effect p-3 rounded-lg btn z-10" (click)="searchPlace()">
       <!-- <fa-icon class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700"
         [icon]="faMagnifyingGlass"></fa-icon> -->
       <img class="text-2xl text-gray-500 transform duration-300 hover:text-blue-700 w-12"
         src="../../../../assets/icons/IconSearch.gif">
     </button>
-    <!-- <select class="mt-1 w-full" [(ngModel)]="selectedOption">
-      <option value="">Select a city</option>
-      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
-    </select> -->
-    <input placeholder="Search for cities" class=" mt-1 w-full" [(ngModel)]="searchText" (keydown.enter)="searchPlace()"/>
+    <input placeholder="Search for cities" class=" mt-1 w-full" [(ngModel)]="searchText"
+      (keydown.enter)="searchPlace()" />
     <!-- <div class=" inset-0 bg-gray-400 bg-opacity-75 backdrop-filter backdrop-blur-sm flex justify-center items-center"
       *ngIf="showResults">
     </div> -->
   </div>
 
+
+<!-- Para tamaño de dispositivo grande -->
+
   <!-- Current Location-->
-  <button class="flex xl:row-span-1 xl:col-span-2 h-20 items-center p-4  dark:bg-night-700 effect rounded-2xl  btn "
+  <button
+    class=" hidden xl:flex col-span-1 xl:row-span-1 xl:col-span-2 h-20 items-center p-4 effect rounded-2xl btn dark:bg-night-700"
     (click)="getCurrentLocation()">
     <div
-      class="flex items-center hover:rounded-xl xl:hover:w-full h-full pr-14 pl-3 xl:pl-10 lg:pl-10 transition duration-100 ease-in-out hoverEffect">
-      <fa-icon class="text-4xl text-gray-500 transform duration-300" [icon]="faEarth"></fa-icon>
-      <span class="text-xl font-bold text-gray-500 p-4 xl:text-2xl md:text-xl">Current Location</span>
+      class="flex items-center hover:rounded-xl xl:hover:w-full h-full xl:pr-14  xl:pl-10 lg:pl-10 transition duration-100 ease-in-out hoverEffect">
+      <div class="flex items-center w-auto">
+        <fa-icon class="text-4xl text-gray-500 transform duration-300" [icon]="faEarth"></fa-icon>
+      </div>
+      <span class="hidden md:flex text-xl font-bold text-gray-500 p-4 xl:text-2xl md:text-xl">Current Location</span>
     </div>
   </button>
 
   <!-- Toogle Theme-->
   <div
-    class="xl:row-span-1 xl:col-span-1 h-20 flex effect flex-col bg-primary rounded-xl   p-5 dark:bg-night-700 toggle-btn"
+    class="hidden xl:row-span-1 xl:col-span-1 h-20 xl:flex effect flex-col bg-primary rounded-xl   p-5 dark:bg-night-700 toggle-btn"
     id="_1st-toggle-btn">
     <input type="checkbox" [checked]="themeService.isDark" (click)="toggleTheme()">
     <span></span>
@@ -40,4 +42,27 @@
 </div>
 
 
+<!-- Para tamaño de telefono o dispositvp pequeño -->
 
+<div class="mt-8 xl:hidden flex row-span-1 col-span-3 xl:space-x-4">
+  <!-- Current Location-->
+  <button
+    class="flex col-span-1 xl:row-span-1 xl:col-span-2 h-20 items-center p-4 effect rounded-2xl btn dark:bg-night-700"
+    (click)="getCurrentLocation()">
+    <div
+      class="flex items-center hover:rounded-xl xl:hover:w-full h-full xl:pr-14 px-3 xl:pl-10 lg:pl-10 transition duration-100 ease-in-out hoverEffect">
+      <div class="flex items-center w-auto">
+        <fa-icon class="text-4xl text-gray-500 transform duration-300" [icon]="faEarth"></fa-icon>
+      </div>
+      <span class="hidden md:flex text-xl font-bold text-gray-500 p-4 xl:text-2xl md:text-xl">Current Location</span>
+    </div>
+  </button>
+
+  <!-- Toogle Theme-->
+  <div
+    class="col-span-2 xl:row-span-1 xl:col-span-1 h-20 flex effect flex-col bg-primary rounded-xl   p-5 dark:bg-night-700 toggle-btn"
+    id="_1st-toggle-btn">
+    <input type="checkbox" [checked]="themeService.isDark" (click)="toggleTheme()">
+    <span></span>
+  </div>
+</div>
